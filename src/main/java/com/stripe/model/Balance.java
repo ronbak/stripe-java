@@ -8,24 +8,17 @@ import com.stripe.exception.InvalidRequestException;
 import com.stripe.net.APIResource;
 import com.stripe.net.RequestOptions;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Getter @Setter @EqualsAndHashCode(callSuper=false)
 public class Balance extends APIResource {
 	List<Money> available;
 	Boolean livemode;
 	List<Money> pending;
-
-	public List<Money> getAvailable() {
-		return available;
-	}
-
-	public Boolean getLivemode() {
-		return livemode;
-	}
-
-	public List<Money> getPending() {
-		return pending;
-	}
 
 	public static Balance retrieve() throws AuthenticationException,
 			InvalidRequestException, APIConnectionException, CardException,

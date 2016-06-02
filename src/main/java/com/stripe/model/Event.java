@@ -8,8 +8,13 @@ import com.stripe.exception.InvalidRequestException;
 import com.stripe.net.APIResource;
 import com.stripe.net.RequestOptions;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Map;
 
+@Getter @Setter @EqualsAndHashCode(callSuper=false)
 public class Event extends APIResource implements HasId {
 	String id;
 	String apiVersion;
@@ -20,78 +25,6 @@ public class Event extends APIResource implements HasId {
 	String request;
 	String type;
 	String userId;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getApiVersion() {
-		return apiVersion;
-	}
-
-	public void setApiVersion(String apiVersion) {
-		this.apiVersion = apiVersion;
-	}
-
-	public Long getCreated() {
-		return created;
-	}
-
-	public void setCreated(Long created) {
-		this.created = created;
-	}
-
-	public EventData getData() {
-		return data;
-	}
-
-	public void setData(EventData data) {
-		this.data = data;
-	}
-
-	public Boolean getLivemode() {
-		return livemode;
-	}
-
-	public void setLivemode(Boolean livemode) {
-		this.livemode = livemode;
-	}
-
-	public Integer getPendingWebhooks() {
-		return pendingWebhooks;
-	}
-
-	public void setPendingWebhooks(Integer pendingWebhooks) {
-		this.pendingWebhooks = pendingWebhooks;
-	}
-
-	public String getRequest() {
-		return request;
-	}
-
-	public void setRequest(String request) {
-		this.request = request;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String name) {
-		this.type = name;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
 
 	public static Event retrieve(String id) throws AuthenticationException,
 			InvalidRequestException, APIConnectionException, CardException,

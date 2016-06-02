@@ -8,8 +8,13 @@ import com.stripe.exception.InvalidRequestException;
 import com.stripe.net.APIResource;
 import com.stripe.net.RequestOptions;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Map;
 
+@Getter @Setter @EqualsAndHashCode(callSuper=false)
 public class Reversal extends APIResource implements MetadataStore<Transfer>, HasId {
 	String id;
 	Integer amount;
@@ -18,58 +23,6 @@ public class Reversal extends APIResource implements MetadataStore<Transfer>, Ha
 	String currency;
 	Map<String, String> metadata;
 	String transfer;
-
-	public String getId() {
-		return id;
-	}
-
-	public Integer getAmount() {
-		return amount;
-	}
-
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
-
-	public String getBalanceTransaction() {
-		return balanceTransaction;
-	}
-
-	public void setBalanceTransaction(String balanceTransaction) {
-		this.balanceTransaction = balanceTransaction;
-	}
-
-	public Long getCreated() {
-		return created;
-	}
-
-	public void setCreated(Long created) {
-		this.created = created;
-	}
-
-	public String getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
-	public Map<String, String> getMetadata() {
-		return metadata;
-	}
-
-	public void setMetadata(Map<String, String> metadata) {
-		this.metadata = metadata;
-	}
-
-	public String getTransfer() {
-		return transfer;
-	}
-
-	public void setTransfer(String transfer) {
-		this.transfer = transfer;
-	}
 
 	public Reversal update(Map<String, Object> params)
 			throws AuthenticationException, InvalidRequestException,

@@ -1,7 +1,12 @@
 package com.stripe.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Map;
 
+@Getter @Setter @EqualsAndHashCode(callSuper=false)
 public class InvoiceLineItem extends StripeObject implements HasId {
 	String id;
 	Integer amount;
@@ -16,56 +21,4 @@ public class InvoiceLineItem extends StripeObject implements HasId {
 	Integer quantity;
 	String subscription;
 	String type;
-
-	public String getId() {
-		return this.id;
-	}
-
-	public Integer getAmount() {
-		return this.amount;
-	}
-
-	public String getCurrency() {
-		return this.currency;
-	}
-
-	public String getDescription() {
-		return this.description;
-	}
-
-	public Boolean getDiscountable() {
-		return this.discountable;
-	}
-
-	public Boolean getLivemode() {
-		return this.livemode;
-	}
-
-	public Map<String, String> getMetadata() {
-		return this.metadata;
-	}
-
-	public InvoiceLineItemPeriod getPeriod() {
-		return this.period;
-	}
-
-	public Plan getPlan() {
-		return this.plan;
-	}
-
-	public Boolean getProration() {
-		return this.proration;
-	}
-
-	public Integer getQuantity() {
-		return this.quantity;
-	}
-
-	public String getSubscription() {
-		return this.subscription;
-	}
-
-	public String getType() {
-		return this.type;
-	}
 }

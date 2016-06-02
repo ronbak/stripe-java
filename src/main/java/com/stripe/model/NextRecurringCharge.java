@@ -1,22 +1,11 @@
 package com.stripe.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter @EqualsAndHashCode(callSuper=false)
 public class NextRecurringCharge extends StripeObject {
 	Integer amount;
 	String date;
-	
-	public Integer getAmount() {
-		return amount;
-	}
-	
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
-	
-	public String getDate() {
-		return date;
-	}
-	
-	public void setDate(String date) {
-		this.date = date;
-	}
 }
